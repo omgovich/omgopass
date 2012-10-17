@@ -1,74 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru-RU">
+<head>
+	<meta charset="utf-8" />
+	<title>Omgopass - генератор надежных запоминающихся паролей на JavaScript</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+	<script src="http://yandex.st/jquery/1.7.1/jquery.min.js"></script>
+	<script src="js/omgopass.js"></script>
+</head>
+<body>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Omgopass : Генератор надежных запоминающихся паролей" />
+	<!-- Navbar -->
+	<nav class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<span class="brand" href="#">Omgopass.js</span>
+				<ul class="nav pull-right">
+					<li><a href="http://twitter.com/omgovich">Twitter</a></li>
+					<li><a href="omgovich@ya.ru">Email</a></li>
+				</ul>
+				<ul class="nav">
+					<li><a href="https://github.com/Omgovich/omgopass/zipball/master">Скачать</a></li>
+					<li><a href="http://password.omgovich.ru/">Онлайн генератор</a></li>
+					<li><a href="https://github.com/Omgovich/omgopass">Проект на GitHub</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--/Navbar -->
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+	<!-- Container -->
+	<article class="container container-page">
 
-    <title>Omgopass</title>
-  </head>
+		<!-- First row -->
+		<header class="hero-unit">
+			<span class="bubble bubble-first">
+				<script>
+				document.write(omgopass({
+					syllables: 2,
+					numbers: false
+				}));
+				</script>?
+			</span>
+			<span class="bubble bubble-second">
+				<script>
+				document.write(omgopass({
+					syllables: 2,
+					numbers: false
+				}));
+				</script>!
+			</span>
+			<h1>Omgopass.js</h1>
+			<p>Генератор надежных запоминающихся паролей <strike class="muted">для пастухов</strike></p>
+			<a class="btn btn-large btn-primary" href="https://github.com/Omgovich/omgopass/zipball/master">Скачать</a>
+			&nbsp;
+			<span class="muted">или &nbsp; <a href="http://password.omgovich.ru/">использовать онлайн генератор</a></span>
+		</header>
+		</div>
+		<!--/First row -->
 
-  <body>
+		<div class="row">
+			<div class="span5">
+				<h2>Как установить?</h2>
+				<p>Если Вам хочется генерировать пароли на своем сайте, то придется изрядно потрудиться и вставить целую кучу символов в свой html-код:</p>
+				<p><code>&lt;script src="omgopass.min.js"&gt;&lt;/script&gt;</code></p>
+			</div>
+			<div class="span6 offset1">
+				<h2>Хочу пароль!</h2>
+				<div class="well well-large">
+					<span id="password">
+						<script>document.write(omgopass());</script>
+					</span>
+					<button type="submit" class="btn btn-primary pull-right" onclick="$('#password').text(omgopass())">Сгенерировать</button>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/Omgovich/omgopass">View on GitHub</a>
+		<hr />
 
-          <h1 id="project_title">Omgopass</h1>
-          <h2 id="project_tagline">Генератор надежных запоминающихся паролей</h2>
+		<div class="row">
+			<div class="span5">
+				<h2>Как использовать?</h2>
+				<p>К сожалению, библиотека очень сложна в использовании &mdash; для получения пароля требуется написать 8 букв и две скобочки, что, разумеется, под силу не каждому человеку:</p>
+				<p><pre><code>omgopass() // возвращает пароль</code></pre></p>
+				<hr />
+				<p>Показать пароль в модальном окне:</p>
+				<p><pre><code>alert(omgopass())</code></pre></p>
+				<p><button class="btn btn-primary" onclick="alert(omgopass())"><i class="icon-play icon-white"></i> Выполнить</button></p>
+				<hr />
+				<p>Что, а где jQuery?</p>
+				<p><pre><code>$(this).text(omgopass())</code></pre></p>
+				<p><button class="btn btn-primary" onclick="$(this).text(omgopass())"><i class="icon-play icon-white"></i> Выполнить</button></p>
+			</div>
+			<div class="span6 offset1">
+				<h2>Как настроить?</h2>
+				<table class="table table-bordered">
+					<tr>
+						<th>параметр</th>
+						<th>по-умолчанию</th>
+						<th>описание</th>
+					</tr>
+					<tr>
+						<td><code>syllables</code></td>
+						<td><code>3</code></td>
+						<td>число слогов</td>
+					</tr>
+					<tr>
+						<td><code>numbers</code></td>
+						<td><code>true</code></td>
+						<td>вкл/выкл цифры</td>
+					</tr>
+					<tr>
+						<td><code>titlecase</code></td>
+						<td><code>true</code></td>
+						<td>вкл/выкл заглавные буквы</td>
+					</tr>
+					<tr>
+						<td><code>consonants</code></td>
+						<td><code>'bcdfghklmnprstvz'</code></td>
+						<td>согласные буквы</td>
+					</tr>
+					<tr>
+						<td><code>vowels</code></td>
+						<td><code>'aeiouy'</code></td>
+						<td>гласные буквы</td>
+					</tr>
+				</table>
+				<p>Пароль без цифр, содержащий 4 слога из букв русского алфавита:</p>
+				<p><pre><code>omgopass({
+    syllables:  4,
+    numbers:    false,
+    vowels:     'аеёиоуэюя',
+    consonants: 'бвгджзклмнпрстчш'
+})</code></pre></p>
+				<p><button class="btn btn-primary" onclick="$(this).text(omgopass({ syllables:4, numbers:false, vowels:'аеёиоуэюя', consonants:'бвгджзклмнпрстчш' }))"><i class="icon-play icon-white"></i> Выполнить</button></p>
+			</div>
+		</div>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/Omgovich/omgopass/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/Omgovich/omgopass/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+		<hr />
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
+		Шилов Влад [Omgovich]
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+	</article>
+	<!--/Container -->
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Omgopass maintained by <a href="https://github.com/Omgovich">Omgovich</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+</body>
 </html>
