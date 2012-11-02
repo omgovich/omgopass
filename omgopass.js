@@ -17,7 +17,7 @@
 	};
 
 	// get password function
-	var getPassword = function(s) {
+	function getPassword(s) {
 		var password = '';
 		for (var i=0; i<s.syllables; i++) password += getSyllable(s.consonants, s.vowels, s.numbers, s.titlecase);
 		return password;
