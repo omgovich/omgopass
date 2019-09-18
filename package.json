@@ -1,0 +1,14 @@
+{
+  "name": "omgopass",
+  "version": "1.0.1",
+  "description": "Generator of strong passwords that are easy to remember",
+  "keywords": [
+    "random",
+    "password",
+    "generator"
+  ],
+  "main": "index.js",
+  "repository": "omgovich/omgopass",
+  "author": "Vlad Shilov <omgovich@ya.ru>",
+  "license": "ISC"
+}
