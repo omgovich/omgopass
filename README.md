@@ -1,3 +1,3 @@
-Генератор надежных запоминающихся паролей на JavaScript
+# omgopass
 
-[Описание и демо](http://omgovich.github.com/omgopass/)
+Generator of strong passwords that are easy to remember
