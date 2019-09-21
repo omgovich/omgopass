@@ -44,5 +44,7 @@ const getRandomNumber = (from, to) => {
 };
 
 const times = (number, callback) => {
-  return Array(number).map((_, index) => callback(index));
+  const result = [];
+  for (let index = 0; index < number; index++) result.push(callback(index));
+  return result;
 };

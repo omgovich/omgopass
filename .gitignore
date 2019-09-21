@@ -8,3 +8,6 @@ node_modules/
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# Ignore CommonJS bundle
+/cjs
