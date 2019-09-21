@@ -7,8 +7,16 @@
     "password",
     "generator"
   ],
-  "main": "index.js",
+  "scripts": {
+    "bundle-cjs": "rollup index.js --o cjs/index.js --f cjs",
+    "prepublishOnly": "npm run bundle-cjs"
+  },
+  "module": "index.js",
+  "main": "cjs/index.js",
   "repository": "omgovich/omgopass",
   "author": "Vlad Shilov <omgovich@ya.ru>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^1.21.4"
+  }
 }
