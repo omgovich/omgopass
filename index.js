@@ -1,4 +1,4 @@
-export const generatePassword = function(options = {}) {
+export const generatePassword = (options = {}) => {
   return getRandomPassword({
     syllablesCount: 3,
     minSyllableLength: 2,
