@@ -8,6 +8,7 @@
     "generator"
   ],
   "scripts": {
+    "size-limit": "size-limit",
     "bundle-cjs": "rollup index.js --o cjs/index.js --f cjs",
     "prepublishOnly": "npm run bundle-cjs"
   },
@@ -16,7 +17,14 @@
   "repository": "omgovich/omgopass",
   "author": "Vlad Shilov <omgovich@ya.ru>",
   "license": "ISC",
+  "size-limit": [
+    {
+      "path": "index.js",
+      "limit": "400 B"
+    }
+  ],
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^2.1.6",
     "rollup": "^1.21.4"
   }
 }
