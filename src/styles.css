@@ -59,7 +59,7 @@ body {
 }
 
 .password__value::selection {
-  background-color: rgba(162, 211, 255, 0.5);
+  background-color: rgba(130, 180, 255, 0.7);
   color: #fff;
 }
 
