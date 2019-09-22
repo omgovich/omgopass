@@ -1,0 +1,14 @@
+# NPM
+npm-debug.log*
+node_modules/
+.npm
+/package-lock.json
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Parcel build
+/dist
+/.cache

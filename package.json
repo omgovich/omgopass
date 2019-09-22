@@ -1,0 +1,19 @@
+{
+  "name": "omgopass-page",
+  "version": "1.0.0",
+  "description": "Public page for omgopass library",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build index.html",
+    "dev": "parcel index.html --open"
+  },
+  "repository": "omgovich/omgopass",
+  "author": "Vlad Shilov <omgovich@ya.ru>",
+  "license": "ISC",
+  "dependencies": {
+    "omgopass": "^2.0.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}

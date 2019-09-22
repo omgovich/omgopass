@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: inherit;
+}
+
+html,
+body {
+  background: #22252b;
+  color: #fff;
+  font: normal 18px/1.25 "IBM Plex Sans", Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.content {
+  width: 100%;
+  max-width: 540px;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.header__logo {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.header__slogan {
+  color: #a4a4a7;
+}
+
+.password {
+  padding: 28px 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  background-color: #2c3036;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-size: 40px;
+  font-family: "IBM Plex Mono", monospace;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions__toggles {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  margin: 0;
+  padding: 16px 24px;
+  cursor: pointer;
+  font: inherit;
+  color: #fff;
+  background-color: #0087ff;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #1490ff;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 20px;
+  user-select: none;
+}
+
+.toggle:first-child {
+  margin-left: 0;
+}
+
+.toggle__input {
+  display: none;
+}
+
+.toggle__control {
+  position: relative;
+  margin-right: 8px;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #3d3f44;
+  transition: background-color 0.25s;
+}
+
+.toggle__input:checked + .toggle__control {
+  background-color: #0087ff;
+}
+
+.toggle__control:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: transform 0.25s;
+}
+
+.toggle__input:checked + .toggle__control:before {
+  transform: translateX(20px);
+}
+
+.footer {
+  display: flex;
+  margin-top: 40px;
+  border-top: 1px solid #2c3036;
+  padding-top: 20px;
+  font-size: 16px;
+}
+
+.footer__link {
+  margin-right: 16px;
+  color: #a4a4a7;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+
+  .password {
+    font-size: 24px;
+    padding: 24px 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions__toggles {
+    margin-top: 16px;
+  }
+}
