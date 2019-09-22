@@ -24,7 +24,7 @@ const password = generatePassword() // Tu6Log5Bam4
 
 #### Advanced Usage
 
-```
+```js
 generatePassword({
   syllablesCount: 4,
   minSyllableLength: 3,
