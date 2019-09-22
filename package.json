@@ -4,8 +4,9 @@
   "description": "Public page for omgopass library",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build index.html",
-    "dev": "parcel index.html --open"
+    "build": "parcel build index.html --public-url /omgopass/",
+    "dev": "parcel index.html --open",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": "omgovich/omgopass",
   "author": "Vlad Shilov <omgovich@ya.ru>",
@@ -14,6 +15,7 @@
     "omgopass": "^2.0.0"
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "parcel-bundler": "^1.12.3"
   }
 }
