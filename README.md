@@ -40,7 +40,7 @@ generatePassword({
 
 | Name               | Description                                | Default            |
 |--------------------|--------------------------------------------|--------------------|
-| `syllablesCount`   | Integer, count of syllables                |`10`                |
+| `syllablesCount`   | Integer, count of syllables                |`3`                 |
 | `minSyllableLength`| Integer, minimal length of a syllable      |`2`                 |
 | `maxSyllableLength`| Integer, max length of a syllable          |`3`                 |
 | `hasNumbers`       | Boolean, put numbers in the password       |`true`              |
