@@ -1,5 +1,7 @@
 # omgopass
 
+[![npm](https://img.shields.io/npm/v/omgopass.svg?color=%2356C838)](https://www.npmjs.com/package/omgopass)
+
 Generator of strong passwords that are easy to remember
 
 - **Fast**: 40 times faster than `password-generator`
