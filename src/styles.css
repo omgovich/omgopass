@@ -4,6 +4,7 @@
   padding: 0;
   border: none;
   font: inherit;
+  outline: none;
 }
 
 html,
@@ -40,14 +41,45 @@ body {
 }
 
 .password {
-  padding: 28px 20px;
+  position: relative;
   margin-bottom: 20px;
+}
+
+.password__value {
+  display: block;
+  width: 100%;
+  padding: 28px 20px;
   border-radius: 6px;
-  background-color: #2c3036;
+  background: #2c3036;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  color: #fff;
   font-size: 40px;
   font-family: "IBM Plex Mono", monospace;
   text-align: center;
+}
+
+.password__value::selection {
+  background-color: rgba(162, 211, 255, 0.5);
+  color: #fff;
+}
+
+.password__copy {
+  position: absolute;
+  display: flex;
+  padding: 12px;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background: none;
+  opacity: 0.7;
+}
+
+.password__copy:hover {
+  opacity: 1;
+}
+
+.password__copy:active {
+  transform: translateY(1px);
 }
 
 .actions {
@@ -62,15 +94,11 @@ body {
 }
 
 .button {
-  margin: 0;
   padding: 16px 24px;
   cursor: pointer;
-  font: inherit;
   color: #fff;
-  background-color: #0087ff;
-  border: none;
+  background: #0087ff;
   border-radius: 4px;
-  outline: none;
 }
 
 .button:hover {
@@ -150,9 +178,13 @@ body {
     font-size: 16px;
   }
 
-  .password {
+  .password__value {
     font-size: 24px;
     padding: 24px 16px;
+  }
+
+  .password__copy {
+    display: none;
   }
 
   .actions {
