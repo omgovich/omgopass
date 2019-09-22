@@ -260,22 +260,38 @@ require("./styles.css");
 var _omgopass = require("omgopass");
 
 document.addEventListener("DOMContentLoaded", function () {
-  var $password = document.getElementsByClassName("password")[0];
+  var $password = document.getElementsByName("password")[0];
   var $button = document.getElementsByClassName("button")[0];
+  var $copyButton = document.getElementsByClassName("password__copy")[0];
   var $numbers = document.getElementsByName("numbers")[0];
   var $titlecase = document.getElementsByName("titlecase")[0];
 
   var renderPassword = function renderPassword() {
-    $password.innerHTML = (0, _omgopass.generatePassword)({
+    $password.value = (0, _omgopass.generatePassword)({
       hasNumbers: $numbers.checked,
       titlecased: $titlecase.checked
     });
+  };
+
+  var copyToClipboard = function copyToClipboard() {
+    $password.select();
+    document.execCommand("copy");
+
+    if (document.selection) {
+      document.selection.empty();
+    } else if (window.getSelection) {
+      window.getSelection().removeAllRanges();
+    }
   };
 
   renderPassword();
   $button.addEventListener("click", renderPassword);
   $numbers.addEventListener("change", renderPassword);
   $titlecase.addEventListener("change", renderPassword);
+  $copyButton.addEventListener("click", copyToClipboard);
+  $password.addEventListener("click", function () {
+    $password.select();
+  });
 });
 },{"./styles.css":"src/styles.css","omgopass":"node_modules/omgopass/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -305,7 +321,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50577" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57952" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
