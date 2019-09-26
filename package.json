@@ -1,7 +1,7 @@
 {
   "name": "omgopass",
-  "version": "2.0.0",
-  "description": "Generator of strong passwords that are easy to remember",
+  "version": "2.0.1",
+  "description": "A tiny memorable password generator for Node.js and browser",
   "keywords": [
     "random",
     "password",

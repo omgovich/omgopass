@@ -1,0 +1,2 @@
+# Don't deploy tests to NPM
+/test
