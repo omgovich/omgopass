@@ -10,5 +10,8 @@ node_modules/
 .LSOverride
 
 # Parcel build
-/dist
+/dist/*
 /.cache
+
+# Public files
+!/dist/demo.gif

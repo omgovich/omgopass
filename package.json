@@ -4,7 +4,8 @@
   "description": "Public page for omgopass library",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build index.html --public-url /omgopass/",
+    "clean-dist": "del-cli 'dist/*' '!dist/demo.gif'",
+    "build": "npm run clean-dist && parcel build index.html --public-url /omgopass/",
     "dev": "parcel index.html --open",
     "deploy": "npm run build && gh-pages -d dist"
   },
@@ -15,6 +16,7 @@
     "omgopass": "^2.0.0"
   },
   "devDependencies": {
+    "del-cli": "^3.0.0",
     "gh-pages": "^2.1.1",
     "parcel-bundler": "^1.12.3"
   }
