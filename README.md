@@ -2,12 +2,16 @@
 
 [![npm](https://img.shields.io/npm/v/omgopass.svg?color=%2356C838)](https://www.npmjs.com/package/omgopass)
 
-Generator of strong passwords that are easy to remember
+A tiny memorable password generator
 
 - **Fast**: 40 times faster than `password-generator`
 - **Small**: 314 bytes (minified and gzipped)
 - **No dependencies**
 - Supports Node.js and browsers
+
+### [Generate password online](https://omgovich.github.io/omgopass/)
+
+<img src="https://omgovich.github.io/omgopass/demo.gif" width="400">
 
 ### Install
 
@@ -19,12 +23,18 @@ npm install omgopass --save
 
 ```js
 import { generatePassword } from "omgopass";
-const password = generatePassword() // Tu6Log5Bam4
+const password = generatePassword(); // Tu6Log5Bam4
 ```
 
 #### Advanced Usage
 
 ```js
+generatePassword({ hasNumbers: false }); // MunBedKod
+
+generatePassword({ syllablesCount: 5 }); // Rot2Ba5Vim1My8Red4
+
+generatePassword({ titlecased: false }); // si5co3ve8
+
 generatePassword({
   syllablesCount: 4,
   minSyllableLength: 3,
@@ -33,20 +43,20 @@ generatePassword({
   titlecased: true,
   vowels: "аеиоуэюя",
   consonants: "бвгджзклмнпрстчш"
-}) // ЗерКотиЛовМеч
+}); // ЗерКотиЛовМеч
 ```
 
 #### Available options
 
-| Name               | Description                                | Default            |
-|--------------------|--------------------------------------------|--------------------|
-| `syllablesCount`   | Integer, count of syllables                |`3`                 |
-| `minSyllableLength`| Integer, minimal length of a syllable      |`2`                 |
-| `maxSyllableLength`| Integer, max length of a syllable          |`3`                 |
-| `hasNumbers`       | Boolean, put numbers in the password       |`true`              |
-| `titlecased`       | Boolean, use titlecase                     |`true`              |
-| `vowels`           | String, vowel alphabet                     |`'aeiouy'`          |
-| `consonants`       | String, consonant alphabet                 |`'bcdfghklmnprstvz'`|
+| Name                | Description                           | Default              |
+| ------------------- | ------------------------------------- | -------------------- |
+| `syllablesCount`    | Integer, count of syllables           | `3`                  |
+| `minSyllableLength` | Integer, minimal length of a syllable | `2`                  |
+| `maxSyllableLength` | Integer, max length of a syllable     | `3`                  |
+| `hasNumbers`        | Boolean, put numbers in the password  | `true`               |
+| `titlecased`        | Boolean, use titlecase                | `true`               |
+| `vowels`            | String, vowel alphabet                | `'aeiouy'`           |
+| `consonants`        | String, consonant alphabet            | `'bcdfghklmnprstvz'` |
 
 ### Supporting IE11 and obsolete platforms
 
