@@ -1,6 +1,6 @@
 # omgopass
 
-[![npm](https://img.shields.io/npm/v/omgopass.svg?color=%2356C838)](https://www.npmjs.com/package/omgopass)
+[![npm](https://img.shields.io/npm/v/omgopass.svg?color=%2356C838)](https://www.npmjs.com/package/omgopass) [![Build Status](https://travis-ci.com/omgovich/omgopass.svg?branch=master)](https://travis-ci.com/omgovich/omgopass) ![Dependencies](https://img.shields.io/david/omgovich/omgopass)
 
 A tiny memorable password generator
 
