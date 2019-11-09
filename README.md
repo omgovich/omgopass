@@ -4,8 +4,9 @@
 
 A tiny memorable password generator
 
-- **Fast**: 40 times faster than `password-generator`
-- **Small**: 314 bytes (minified and gzipped)
+- **Fast**: 15 times faster than `password-generator`
+- **Small**: 349 bytes (minified and gzipped)
+- **Safe**: Uses [cryptographically strong random API](https://nodejs.org/api/crypto.html) instead of `Math.random`
 - **No dependencies**
 - Supports Node.js and browsers
 
