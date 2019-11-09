@@ -13,8 +13,8 @@ module.exports = (options = {}) => {
   });
 };
 
-const getRandomPassword = ({ syllablesCount, ...settings }) => {
-  return times(syllablesCount, () => getRandomSyllable(settings)).join("");
+const getRandomPassword = settings => {
+  return produce(settings.syllablesCount, () => getRandomSyllable(settings));
 };
 
 const getRandomSyllable = ({
@@ -27,11 +27,11 @@ const getRandomSyllable = ({
 }) => {
   const length = getRandomNumber(minSyllableLength, maxSyllableLength);
 
-  const syllable = times(length, index => {
+  const syllable = produce(length, index => {
     const char = getRandomChar(index % 2 ? vowels : consonants);
     if (index === 0 && titlecased) return char.toUpperCase();
     return char;
-  }).join("");
+  });
 
   if (hasNumbers) return syllable + getRandomNumber(0, 9);
   return syllable;
@@ -45,8 +45,8 @@ const getRandomNumber = (from, to) => {
   return Math.round(random() * (to - from) + from);
 };
 
-const times = (number, callback) => {
+const produce = (number, callback) => {
   const result = [];
   for (let index = 0; index < number; index++) result.push(callback(index));
-  return result;
+  return result.join("");
 };
