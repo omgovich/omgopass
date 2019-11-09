@@ -1,4 +1,6 @@
-export const generatePassword = (options = {}) => {
+const random = require("./random");
+
+module.exports = (options = {}) => {
   return getRandomPassword({
     syllablesCount: 3,
     minSyllableLength: 2,
@@ -40,7 +42,7 @@ const getRandomChar = stack => {
 };
 
 const getRandomNumber = (from, to) => {
-  return Math.round(Math.random() * (to - from) + from);
+  return Math.round(random() * (to - from) + from);
 };
 
 const times = (number, callback) => {
