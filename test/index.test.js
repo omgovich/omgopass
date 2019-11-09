@@ -1,4 +1,4 @@
-const { generatePassword } = require("../");
+const generatePassword = require("../");
 
 test("default settings", () => {
   const password = generatePassword();

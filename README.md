@@ -22,7 +22,7 @@ npm install omgopass --save
 ### Usage
 
 ```js
-import { generatePassword } from "omgopass";
+import generatePassword from "omgopass";
 const password = generatePassword(); // Tu6Log5Bam4
 ```
 
