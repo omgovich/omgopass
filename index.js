@@ -1,4 +1,4 @@
-const getRandomNumber = require("./random");
+const random = require("./random");
 
 module.exports = (options = {}) => {
   return getRandomPassword({
@@ -22,10 +22,10 @@ const getRandomSyllable = ({
   vowels,
   hasNumbers,
   titlecased,
-  minSyllableLength,
-  maxSyllableLength
+  minSyllableLength: minLength,
+  maxSyllableLength: maxLength
 }) => {
-  const length = getRandomNumber(minSyllableLength, maxSyllableLength);
+  const length = minLength + random(maxLength - minLength + 1);
 
   const syllable = produce(length, index => {
     const char = getRandomChar(index % 2 ? vowels : consonants);
@@ -33,12 +33,12 @@ const getRandomSyllable = ({
     return char;
   });
 
-  if (hasNumbers) return syllable + getRandomNumber(0, 9);
+  if (hasNumbers) return syllable + random(10);
   return syllable;
 };
 
 const getRandomChar = stack => {
-  return stack.charAt(getRandomNumber(0, stack.length - 1));
+  return stack.charAt(random(stack.length));
 };
 
 const produce = (number, callback) => {
