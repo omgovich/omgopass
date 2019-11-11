@@ -41,8 +41,4 @@ const getRandomChar = stack => {
   return stack.charAt(getRandomNumber(0, stack.length - 1));
 };
 
-const produce = (number, callback) => {
-  const result = [];
-  for (let index = 0; index < number; index++) result.push(callback(index));
-  return result.join("");
-};
+const produce = (n, fill) => [...Array(n).keys()].map(fill).join("");
