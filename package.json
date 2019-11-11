@@ -13,7 +13,7 @@
   "author": "Vlad Shilov <omgovich@ya.ru>",
   "license": "ISC",
   "dependencies": {
-    "omgopass": "^2.0.0"
+    "omgopass": "^3.0.0"
   },
   "devDependencies": {
     "del-cli": "^3.0.0",

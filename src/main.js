@@ -1,5 +1,5 @@
 import "./styles.css";
-import { generatePassword } from "omgopass";
+import generatePassword from "omgopass";
 
 document.addEventListener("DOMContentLoaded", () => {
   const $password = document.getElementsByName("password")[0];
