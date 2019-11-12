@@ -5,7 +5,7 @@ let buffer = [];
 
 module.exports = limit => {
   if (++index > size) {
-    buffer = crypto.randomFillSync(new Uint8Array(size));
+    buffer = crypto.randomBytes(size);
     index = 0;
   }
 
