@@ -1,4 +1,4 @@
-const random = require("./random");
+const getRandomValues = require("./random");
 
 module.exports = (options = {}) => {
   return getRandomPassword({
@@ -45,4 +45,17 @@ const produce = (number, callback) => {
   const result = [];
   for (let index = 0; index < number; index++) result.push(callback(index));
   return result.join("");
+};
+
+let buffer = [];
+let bufferSize = 0xffff;
+let bufferIndex = bufferSize + 1;
+
+const random = limit => {
+  if (++bufferIndex > bufferSize) {
+    buffer = getRandomValues(bufferSize);
+    bufferIndex = 0;
+  }
+
+  return buffer[bufferIndex] % limit;
 };
