@@ -1,3 +1,13 @@
-const crypto = require("crypto");
+let crypto = require("crypto");
+let size = 0xffff;
+let index = size + 1;
+let buffer = [];
 
-module.exports = limit => crypto.randomBytes(1).readUInt8() % limit;
+module.exports = limit => {
+  if (++index > size) {
+    buffer = crypto.randomFillSync(new Uint8Array(size));
+    index = 0;
+  }
+
+  return buffer[index] % limit;
+};

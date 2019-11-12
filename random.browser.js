@@ -1,7 +1,13 @@
-const crypto = self.crypto || self.msCrypto;
+let crypto = self.crypto || self.msCrypto;
+let size = 0xffff;
+let index = size + 1;
+let buffer = [];
 
 module.exports = limit => {
-  if (crypto) return crypto.getRandomValues(new Uint8Array(1))[0] % limit;
+  if (++index > size) {
+    buffer = crypto.getRandomValues(new Uint8Array(size));
+    index = 0;
+  }
 
-  return Math.round(Math.random() * 0xffff) % limit;
+  return buffer[index] % limit;
 };
