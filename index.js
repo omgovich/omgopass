@@ -42,9 +42,9 @@ const getRandomChar = stack => {
 };
 
 const produce = (number, callback) => {
-  const result = [];
-  for (let index = 0; index < number; index++) result.push(callback(index));
-  return result.join("");
+  let result = "";
+  for (let index = 0; index < number; index++) result += callback(index);
+  return result;
 };
 
 let buffer = [];
