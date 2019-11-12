@@ -11,21 +11,21 @@ const libraries = [
     name: "omgopass",
     browser: true,
     node: true,
-    size: 476, // https://bundlephobia.com/result?p=omgopass@3.0.1
+    size: 342,
     generate: () => omgopass()
   },
   {
     name: "password-generator",
     browser: true,
     node: true,
-    size: 707, // https://bundlephobia.com/result?p=password-generator@2.2.3
+    size: 644,
     generate: () => passwordGenerator()
   },
   {
     name: "generate-password",
     browser: false,
     node: true,
-    size: 814, // https://bundlephobia.com/result?p=generate-password@1.4.2
+    size: 740,
     generate: () => {
       generatePassword.generate({
         length: 12,
@@ -38,7 +38,7 @@ const libraries = [
     name: "niceware",
     browser: true,
     node: true,
-    size: 192 * 1024, // https://bundlephobia.com/result?p=niceware@1.0.7
+    size: 191 * 1024,
     generate: () => niceware.generatePassphrase(8)
   }
 ];
