@@ -37,25 +37,25 @@ const getRandomSyllable = ({
   return syllable;
 };
 
-const getRandomChar = stack => {
-  return stack.charAt(random(stack.length));
-};
+const getRandomChar = stack => stack[random(stack.length)];
 
 const produce = (number, callback) => {
-  let result = "";
-  for (let index = 0; index < number; index++) result += callback(index);
+  for (var index = 0, result = ""; index < number; index++) {
+    result += callback(index);
+  }
+
   return result;
 };
 
 let buffer = [];
 let bufferSize = 0xffff;
-let bufferIndex = bufferSize + 1;
+let bufferIndex = bufferSize;
 
 const random = limit => {
-  if (++bufferIndex > bufferSize) {
+  if (bufferIndex >= bufferSize) {
     buffer = getRandomValues(bufferSize);
     bufferIndex = 0;
   }
 
-  return buffer[bufferIndex] % limit;
+  return buffer[bufferIndex++] % limit;
 };
