@@ -10,7 +10,7 @@ A tiny memorable password generator
 - **No dependencies**
 - Supports Node.js and browsers
 
-There are a lot of JS password generators and you're probably trying to find out which is the best. We've made a benchmark of the most popular libs for you. [Check it out](#benchmark) and decide for yourself.
+Why you should consider using **omgopass** in your project? The library's goal is to provide the fastest and the smallest (in terms of the bundle size) password generation solution. We have performed a bunch of [benchmarks](#benchmark) against popular password generation libraries, and omgopass currently beats them all.
 
 ### [Generate password online](https://omgovich.github.io/omgopass/)
 
