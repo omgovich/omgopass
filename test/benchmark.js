@@ -11,7 +11,7 @@ const libraries = [
     name: "omgopass",
     browser: true,
     node: true,
-    size: 342,
+    size: 334,
     generate: () => omgopass()
   },
   {
