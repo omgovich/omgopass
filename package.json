@@ -33,6 +33,7 @@
     "jest": "^24.9.0",
     "niceware": "^1.0.7",
     "password-generator": "^2.2.3",
+    "randomatic": "^3.1.1",
     "secure-random-password": "^0.2.1",
     "xkpasswd": "^1.0.5"
   }

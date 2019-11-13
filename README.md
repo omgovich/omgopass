@@ -4,7 +4,7 @@
 
 A tiny memorable password generator
 
-- **Fast**: [600 times](#benchmark) faster than `password-generator`
+- **Fast**: [48 times](#benchmark) faster than `randomatic`
 - **Small**: 334 bytes (minified and gzipped)
 - **Safe**: Uses [cryptographically strong random API](https://nodejs.org/api/crypto.html) instead of `Math.random`
 - **No dependencies**
@@ -68,6 +68,7 @@ generatePassword({
 | omgopass               | 1 430 233 | 334          | true      | true    | true |
 | password-generator     | 2 163     | 644          | true      | true    | true |
 | generate-password      | 696 006   | 740          | false     | false   | true |
+| randomatic             | 29 796    | 1 740        | false     | true    | true |
 | secure-random-password | 7 622     | 8 939        | false     | true    | true |
 | niceware               | 327 805   | 195 584      | true      | true    | true |
 | xkpasswd               | 793 456   | 732 160      | true      | false   | true |

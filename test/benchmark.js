@@ -5,6 +5,7 @@ const generatePassword = require("generate-password");
 const niceware = require("niceware");
 const xkpasswd = require("xkpasswd");
 const secureRandomPassword = require("secure-random-password");
+const randomatic = require("randomatic");
 
 const suite = new Benchmark.Suite();
 
@@ -40,6 +41,14 @@ const libraries = [
         strict: true
       });
     }
+  },
+  {
+    name: "randomatic",
+    memorable: false,
+    browser: true,
+    node: true,
+    size: 1740,
+    generate: () => randomatic("Aa0", 12)
   },
   {
     name: "secure-random-password",
