@@ -6,7 +6,7 @@ A tiny memorable password generator
 
 - **Fast**: [600 times](#benchmark) faster than `password-generator`
 - **Small**: 334 bytes (minified and gzipped)
-- **Safe**: Uses [cryptographically strong random API](https://nodejs.org/api/crypto.html) instead of `Math.random`
+- **Secure**: Uses [cryptographically strong random API](https://nodejs.org/api/crypto.html) instead of `Math.random`
 - **No dependencies**
 - Supports Node.js and browsers
 
@@ -63,23 +63,17 @@ generatePassword({
 
 ### Benchmark
 
-| name                   | ops/sec   | size (bytes) | memorable | browser | node |
-| ---------------------- | --------- | ------------ | --------- | ------- | ---- |
-| omgopass               | 1 430 233 | 334          | true      | true    | true |
-| password-generator     | 2 163     | 644          | true      | true    | true |
-| generate-password      | 696 006   | 740          | false     | false   | true |
-| randomatic             | 29 796    | 1 740        | false     | true    | true |
-| secure-random-password | 7 622     | 8 939        | false     | true    | true |
-| niceware               | 327 805   | 195 584      | true      | true    | true |
-| xkpasswd               | 793 456   | 732 160      | true      | false   | true |
+| name                   | ops/sec       | size (bytes) | memorable | browser | node |
+| ---------------------- | ------------- | ------------ | --------- | ------- | ---- |
+| omgopass               | **1 430 233** | **334**      | true      | true    | true |
+| password-generator     | 2 163         | 644          | true      | true    | true |
+| generate-password      | 696 006       | 740          | false     | false   | true |
+| randomatic             | 29 796        | 1 740        | false     | true    | true |
+| secure-random-password | 7 622         | 8 939        | false     | true    | true |
+| niceware               | 327 805       | 195 584      | true      | true    | true |
+| xkpasswd               | 793 456       | 732 160      | true      | false   | true |
 
-How to run the benchmark locally:
-
-```
-$ git clone https://github.com/omgovich/omgopass.git
-$ cd omgopass
-$ npm run benchmark
-```
+Benchmark results were generated on a MBP 2018, 2,3 GHz Intel Core i5. To perform these tests, execute `npm run benchmark` in the library folder.
 
 ### Supporting IE11 and obsolete platforms
 
