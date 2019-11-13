@@ -27,11 +27,13 @@
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^2.1.6",
+    "@size-limit/preset-small-lib": "^2.2.0",
     "benchmark": "^2.1.4",
     "generate-password": "^1.4.2",
     "jest": "^24.9.0",
     "niceware": "^1.0.7",
-    "password-generator": "^2.2.3"
+    "password-generator": "^2.2.3",
+    "secure-random-password": "^0.2.1",
+    "xkpasswd": "^1.0.5"
   }
 }
