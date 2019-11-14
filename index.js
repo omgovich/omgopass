@@ -8,7 +8,7 @@ module.exports = (options = {}) => {
     hasNumbers: true,
     titlecased: true,
     vowels: "aeiouy",
-    consonants: "bcdfghklmnprstvz",
+    consonants: "bcdfghjklmnpqrstvwxz",
     ...options
   });
 };
