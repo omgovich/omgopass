@@ -36,7 +36,7 @@ let getRandomSyllable = ({
 let getRandomChar = stack => stack[random(stack.length)];
 
 let produce = (number, callback) => {
-  for (var i = 0, result = ""; i < number; i++) result += callback(index);
+  for (var i = 0, result = ""; i < number; i++) result += callback(i);
   return result;
 };
 
