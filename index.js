@@ -1,7 +1,7 @@
-const getRandomValues = require("./random");
+let getRandomValues = require("./random");
 
 module.exports = (options = {}) => {
-  return getRandomPassword({
+  let settings = {
     syllablesCount: 3,
     minSyllableLength: 2,
     maxSyllableLength: 3,
@@ -10,14 +10,12 @@ module.exports = (options = {}) => {
     vowels: "aeiouy",
     consonants: "bcdfghjklmnpqrstvwxz",
     ...options
-  });
-};
+  };
 
-const getRandomPassword = settings => {
   return produce(settings.syllablesCount, () => getRandomSyllable(settings));
 };
 
-const getRandomSyllable = ({
+let getRandomSyllable = ({
   consonants,
   vowels,
   hasNumbers,
@@ -25,25 +23,20 @@ const getRandomSyllable = ({
   minSyllableLength: minLength,
   maxSyllableLength: maxLength
 }) => {
-  const length = minLength + random(maxLength - minLength + 1);
+  let length = minLength + random(maxLength - minLength + 1);
 
-  const syllable = produce(length, index => {
-    const char = getRandomChar(index % 2 ? vowels : consonants);
-    if (index === 0 && titlecased) return char.toUpperCase();
-    return char;
+  let syllable = produce(length, index => {
+    let char = getRandomChar(index % 2 ? vowels : consonants);
+    return titlecased && !index ? char.toUpperCase() : char;
   });
 
-  if (hasNumbers) return syllable + random(10);
-  return syllable;
+  return hasNumbers ? syllable + random(10) : syllable;
 };
 
-const getRandomChar = stack => stack[random(stack.length)];
+let getRandomChar = stack => stack[random(stack.length)];
 
-const produce = (number, callback) => {
-  for (var index = 0, result = ""; index < number; index++) {
-    result += callback(index);
-  }
-
+let produce = (number, callback) => {
+  for (var i = 0, result = ""; i < number; i++) result += callback(index);
   return result;
 };
 
@@ -51,7 +44,7 @@ let buffer = [];
 let bufferSize = 0xffff;
 let bufferIndex = bufferSize;
 
-const random = limit => {
+let random = limit => {
   if (bufferIndex >= bufferSize) {
     buffer = getRandomValues(bufferSize);
     bufferIndex = 0;
