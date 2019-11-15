@@ -5,7 +5,7 @@
 A tiny memorable password generator
 
 - **Fast**: [600 times](#benchmark) faster than `password-generator`
-- **Small**: 325 bytes (minified and gzipped)
+- **Small**: 294 bytes (minified and gzipped)
 - **Secure**: Uses [cryptographically strong random API](https://nodejs.org/api/crypto.html) instead of `Math.random`
 - **No dependencies**
 - Supports Node.js and browsers
@@ -65,7 +65,7 @@ generatePassword({
 
 | name                   | ops/sec       | size (bytes) | memorable | browser | node |
 | ---------------------- | ------------- | ------------ | --------- | ------- | ---- |
-| omgopass               | **1 430 233** | **325**      | true      | true    | true |
+| omgopass               | **1 430 233** | **294**      | true      | true    | true |
 | password-generator     | 2 163         | 644          | true      | true    | true |
 | generate-password      | 696 006       | 740          | false     | false   | true |
 | randomatic             | 29 796        | 1 740        | false     | true    | true |
