@@ -1,39 +1,27 @@
 let getRandomValues = require("./random");
 
-module.exports = (options = {}) => {
-  let settings = {
-    syllablesCount: 3,
-    minSyllableLength: 2,
-    maxSyllableLength: 3,
-    hasNumbers: true,
-    titlecased: true,
-    vowels: "aeiouy",
-    consonants: "bcdfghjklmnpqrstvwxz",
-    ...options
-  };
+module.exports = ({
+  syllablesCount = 3,
+  minSyllableLength = 2,
+  maxSyllableLength = 3,
+  hasNumbers = true,
+  titlecased = true,
+  vowels = "aeiouy",
+  consonants = "bcdfghjklmnpqrstvwxz"
+} = {}) =>
+  produce(syllablesCount, () => {
+    let length =
+      minSyllableLength + random(maxSyllableLength - minSyllableLength + 1);
 
-  return produce(settings.syllablesCount, () => getRandomSyllable(settings));
-};
+    let syllable = produce(length, index => {
+      let alpha = index % 2 ? vowels : consonants;
+      let char = alpha[random(alpha.length)];
 
-let getRandomSyllable = ({
-  consonants,
-  vowels,
-  hasNumbers,
-  titlecased,
-  minSyllableLength: minLength,
-  maxSyllableLength: maxLength
-}) => {
-  let length = minLength + random(maxLength - minLength + 1);
+      return titlecased && !index ? char.toUpperCase() : char;
+    });
 
-  let syllable = produce(length, index => {
-    let alpha = index % 2 ? vowels : consonants;
-    let char = alpha[random(alpha.length)];
-
-    return titlecased && !index ? char.toUpperCase() : char;
+    return hasNumbers ? syllable + random(10) : syllable;
   });
-
-  return hasNumbers ? syllable + random(10) : syllable;
-};
 
 let produce = (number, callback) => {
   for (var i = 0, result = ""; i < number; i++) result += callback(i);
