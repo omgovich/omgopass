@@ -26,14 +26,14 @@ let getRandomSyllable = ({
   let length = minLength + random(maxLength - minLength + 1);
 
   let syllable = produce(length, index => {
-    let char = getRandomChar(index % 2 ? vowels : consonants);
+    let alpha = index % 2 ? vowels : consonants;
+    let char = alpha[random(alpha.length)];
+
     return titlecased && !index ? char.toUpperCase() : char;
   });
 
   return hasNumbers ? syllable + random(10) : syllable;
 };
-
-let getRandomChar = stack => stack[random(stack.length)];
 
 let produce = (number, callback) => {
   for (var i = 0, result = ""; i < number; i++) result += callback(i);
