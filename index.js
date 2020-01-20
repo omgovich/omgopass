@@ -6,10 +6,11 @@ module.exports = ({
   maxSyllableLength = 3,
   hasNumbers = true,
   titlecased = true,
+  separators = "",
   vowels = "aeiouy",
   consonants = "bcdfghjklmnpqrstvwxz"
 } = {}) =>
-  produce(syllablesCount, () => {
+  produce(syllablesCount, i => {
     let length =
       minSyllableLength + random(maxSyllableLength - minSyllableLength + 1);
 
@@ -20,7 +21,11 @@ module.exports = ({
       return titlecased && !index ? char.toUpperCase() : char;
     });
 
-    return hasNumbers ? syllable + random(10) : syllable;
+    if (hasNumbers) syllable += random(10);
+
+    return i && separators
+      ? separators[random(separators.length)] + syllable
+      : syllable;
   });
 
 let produce = (number, callback) => {
