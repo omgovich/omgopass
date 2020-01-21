@@ -77,5 +77,6 @@ test("generate passphrase", () => {
     separators: " "
   });
   const regexp = /^[a-z]{4,6} [a-z]{4,6} [a-z]{4,6}$/;
+  console.log(password);
   expect(regexp.test(password)).toBe(true);
 });

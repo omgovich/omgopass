@@ -5,7 +5,7 @@
 A tiny memorable password generator
 
 - **Fast**: [600 times](#benchmark) faster than `password-generator`
-- **Small**: 294 bytes (minified and gzipped)
+- **Small**: 322 bytes (minified and gzipped)
 - **Secure**: Uses [cryptographically strong random API](https://nodejs.org/api/crypto.html) instead of `Math.random`
 - **No dependencies**
 - Supports Node.js and browsers
@@ -32,11 +32,11 @@ const password = generatePassword(); // Tu6Log5Bam4
 #### Advanced Usage
 
 ```js
-generatePassword({ hasNumbers: false }); // MunBedKod
+generatePassword({ hasNumbers: false }); // "MunBedKod"
 
-generatePassword({ syllablesCount: 5 }); // Rot2Ba5Vim1My8Red4
+generatePassword({ syllablesCount: 5 }); // "Rot2Ba5Vim1My8Red4"
 
-generatePassword({ titlecased: false }); // si5co3ve8
+generatePassword({ titlecased: false }); // "si5co3ve8"
 
 generatePassword({
   syllablesCount: 4,
@@ -44,28 +44,44 @@ generatePassword({
   maxSyllableLength: 4,
   hasNumbers: false,
   titlecased: true,
+  separators: "-_",
   vowels: "аеиоуэюя",
   consonants: "бвгджзклмнпрстчш"
-}); // ЗерКотиЛовМеч
+}); // "Зер_Коти-Лов_Меч"
+```
+
+#### Recipe: Generate random passphrase
+
+Looking for long passwords that are easy to remember but hard to guess? Try to generate random passphrase instead.
+
+```js
+generatePassword({
+  minSyllableLength: 4,
+  maxSyllableLength: 6,
+  hasNumbers: false,
+  titlecased: false,
+  separators: " "
+}); // "goferu lipeba cyzex"
 ```
 
 #### Available options
 
-| Name                | Description                           | Default              |
-| ------------------- | ------------------------------------- | -------------------- |
-| `syllablesCount`    | Integer, count of syllables           | `3`                  |
-| `minSyllableLength` | Integer, minimal length of a syllable | `2`                  |
-| `maxSyllableLength` | Integer, max length of a syllable     | `3`                  |
-| `hasNumbers`        | Boolean, put numbers in the password  | `true`               |
-| `titlecased`        | Boolean, use titlecase                | `true`               |
-| `vowels`            | String, vowel alphabet                | `'aeiouy'`           |
-| `consonants`        | String, consonant alphabet            | `'bcdfghklmnprstvz'` |
+| Name                | Description                             | Default              |
+| ------------------- | --------------------------------------- | -------------------- |
+| `syllablesCount`    | Integer, count of syllables             | `3`                  |
+| `minSyllableLength` | Integer, minimal length of a syllable   | `2`                  |
+| `maxSyllableLength` | Integer, max length of a syllable       | `3`                  |
+| `hasNumbers`        | Boolean, put numbers in the password    | `true`               |
+| `titlecased`        | Boolean, use titlecase                  | `true`               |
+| `vowels`            | String, vowel alphabet                  | `'aeiouy'`           |
+| `consonants`        | String, consonant alphabet              | `'bcdfghklmnprstvz'` |
+| `separators`        | String, symbols that separate syllables | `''`                 |
 
 ### Benchmark
 
 | name                   | ops/sec       | size (bytes) | memorable | browser | node |
 | ---------------------- | ------------- | ------------ | --------- | ------- | ---- |
-| omgopass               | **1 430 233** | **294**      | true      | true    | true |
+| omgopass               | **1 430 233** | **322**      | true      | true    | true |
 | password-generator     | 2 163         | 644          | true      | true    | true |
 | generate-password      | 696 006       | 740          | false     | false   | true |
 | randomatic             | 29 796        | 1 740        | false     | true    | true |
