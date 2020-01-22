@@ -64,19 +64,18 @@ test("change characters", () => {
 
 test("enable separators", () => {
   const password = generatePassword({ separators: "<>" });
-  const regexp = /^([A-Z][a-z]{1,2}[0-9][<>]){2}[A-Z][a-z]{1,2}[0-9]/;
-  expect(regexp.test(password)).toBe(true);
+  expect(password.split(/[<>]/)).toHaveLength(3);
 });
 
 test("generate passphrase", () => {
+  const syllablesCount = 4;
   const password = generatePassword({
+    syllablesCount,
     minSyllableLength: 4,
     maxSyllableLength: 6,
     hasNumbers: false,
     titlecased: false,
     separators: " "
   });
-  const regexp = /^[a-z]{4,6} [a-z]{4,6} [a-z]{4,6}$/;
-  console.log(password);
-  expect(regexp.test(password)).toBe(true);
+  expect(password.split(" ")).toHaveLength(syllablesCount);
 });
