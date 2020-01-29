@@ -40,6 +40,52 @@ body {
   color: #a4a4a7;
 }
 
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.options__toggles {
+  display: flex;
+  align-items: center;
+}
+
+.options__modes {
+  display: flex;
+}
+
+.mode {
+  margin-left: 1px;
+}
+
+.mode__control {
+  display: block;
+  padding: 6px 12px;
+  background-color: #2c3036;
+  cursor: pointer;
+}
+
+.mode:first-child .mode__control {
+  border-radius: 18px 0 0 18px;
+  padding-left: 16px;
+}
+
+.mode:last-child .mode__control {
+  border-radius: 0 18px 18px 0;
+  padding-right: 16px;
+}
+
+.mode__input {
+  display: none;
+}
+
+.mode__input:checked + .mode__control {
+  background-color: #0087ff;
+}
+
 .password {
   position: relative;
   margin-bottom: 20px;
@@ -51,7 +97,6 @@ body {
   padding: 28px 20px;
   border-radius: 6px;
   background: #2c3036;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   color: #fff;
   font-size: 40px;
   font-family: "IBM Plex Mono", monospace;
@@ -82,17 +127,6 @@ body {
   transform: translateY(1px);
 }
 
-.actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.actions__toggles {
-  display: flex;
-  align-items: center;
-}
-
 .button {
   padding: 16px 24px;
   cursor: pointer;
@@ -112,7 +146,6 @@ body {
 .toggle {
   display: flex;
   align-items: center;
-  cursor: pointer;
   margin-left: 20px;
   user-select: none;
 }
@@ -133,10 +166,17 @@ body {
   border-radius: 10px;
   background-color: #3d3f44;
   transition: background-color 0.25s;
+  cursor: pointer;
 }
 
 .toggle__input:checked + .toggle__control {
   background-color: #0087ff;
+}
+
+.toggle__input:disabled + .toggle__control,
+.toggle__input:disabled + .toggle__control + .toggle__label {
+  opacity: 0.5;
+  cursor: default;
 }
 
 .toggle__control:before {
@@ -187,12 +227,13 @@ body {
     display: none;
   }
 
-  .actions {
+  .options {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .actions__toggles {
-    margin-top: 16px;
+  .options__modes {
+    order: -1;
+    margin-bottom: 16px;
   }
 }

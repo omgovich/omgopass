@@ -24,11 +24,11 @@
         <header class="header">
           <h1 class="header__logo">omgopass</h1>
           <h2 class="header__slogan">
-            A tiny memorable password generator for Node.js and browser
+            A tiny memorable password generator for Node.js and browsers
           </h2>
         </header>
 
-        <div class="password">
+        <section class="password">
           <input
             class="password__value"
             name="password"
@@ -39,11 +39,10 @@
           <button class="password__copy">
             <img src="copy.svg" alt="Copy" title="Copy" />
           </button>
-        </div>
+        </section>
 
-        <footer class="actions">
-          <button class="button" autofocus>Generate new</button>
-          <div class="actions__toggles">
+        <section class="options">
+          <div class="options__toggles">
             <label class="toggle">
               <input
                 class="toggle__input"
@@ -65,7 +64,40 @@
               <span class="toggle__label">Titlecase</span>
             </label>
           </div>
-        </footer>
+
+          <div class="options__modes">
+            <label class="mode">
+              <input
+                class="mode__input"
+                type="radio"
+                name="separators"
+                value="none"
+              />
+              <span class="mode__control">None</span>
+            </label>
+            <label class="mode">
+              <input
+                class="mode__input"
+                type="radio"
+                name="separators"
+                value="symbols"
+                checked
+              />
+              <span class="mode__control">Symbols</span>
+            </label>
+            <label class="mode">
+              <input
+                class="mode__input"
+                type="radio"
+                name="separators"
+                value="spaces"
+              />
+              <span class="mode__control">Spaces</span>
+            </label>
+          </div>
+        </section>
+
+        <button class="button" autofocus>Generate new</button>
 
         <footer class="footer">
           <a
