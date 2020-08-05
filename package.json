@@ -1,6 +1,6 @@
 {
   "name": "omgopass",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "A tiny memorable password generator for Node.js and browsers",
   "keywords": [
     "secure",
@@ -19,7 +19,7 @@
   },
   "repository": "omgovich/omgopass",
   "author": "Vlad Shilov <omgovich@ya.ru>",
-  "license": "ISC",
+  "license": "MIT",
   "size-limit": [
     {
       "path": "index.js",
