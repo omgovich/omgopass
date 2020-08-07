@@ -81,13 +81,13 @@ generatePassword({
 
 | name                   | ops/sec       | size (bytes) | memorable | browser | node |
 | ---------------------- | ------------- | ------------ | --------- | ------- | ---- |
-| omgopass               | **1 430 233** | **322**      | true      | true    | true |
-| password-generator     | 2 163         | 644          | true      | true    | true |
-| generate-password      | 696 006       | 740          | false     | false   | true |
-| randomatic             | 29 796        | 1 740        | false     | true    | true |
-| secure-random-password | 7 622         | 8 939        | false     | true    | true |
-| niceware               | 327 805       | 195 584      | true      | true    | true |
-| xkpasswd               | 793 456       | 732 160      | true      | false   | true |
+| omgopass               | **1 430 233** | **322**      | ✅        | ✅       | ✅   |
+| password-generator     | 2 163         | 644          | ✅        | ✅       | ✅   |
+| generate-password      | 696 006       | 740          | ❌        | ❌       | ✅   |
+| randomatic             | 29 796        | 1 740        | ❌        | ✅       | ✅   |
+| secure-random-password | 7 622         | 8 939        | ❌        | ✅       | ✅   |
+| niceware               | 327 805       | 195 584      | ✅        | ✅       | ✅   |
+| xkpasswd               | 793 456       | 732 160      | ✅        | ❌       | ✅   |
 
 Benchmark results were generated on a MBP 2018, 2,3 GHz Intel Core i5. To perform these tests, execute `npm run benchmark` in the library folder.
 
