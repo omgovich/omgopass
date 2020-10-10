@@ -94,6 +94,11 @@ generatePassword({
 
 Benchmark results were generated on a MBP 2018, 2,3 GHz Intel Core i5. To perform these tests, execute `npm run benchmark` in the library folder.
 
+### Who uses omgopass
+
+- [LogChimp](https://github.com/logchimp/logchimp) — self-hosted platform for products makers to get feedback from their users
+- [Laravel VPN Admin](https://github.com/Laravel-VPN-Admin/api-core) — Admin panel for VPN servers management 
+
 ### Supporting IE11 and obsolete platforms
 
 This library uses features like [destructuring assignment](https://kangax.github.io/compat-table/es6/#test-destructuring,_assignment) and [`const/let` declarations](https://kangax.github.io/compat-table/es6/#test-const) and doesn't ship with ES5 transpiled sources. If you aim to support browsers like IE11 and below → make sure you run Babel over your `node_modules`
