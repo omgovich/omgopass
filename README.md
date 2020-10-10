@@ -29,6 +29,9 @@ import generatePassword from "omgopass";
 const password = generatePassword(); // "Tu6Log5Bam4"
 ```
 
+By default **omgopass** returns a random memorable password with size in range 9 to 12 characters.
+To change password length you should config `syllablesCount`, `minSyllableLength` and `maxSyllableLength` options.
+
 #### Advanced Usage
 
 ```js
