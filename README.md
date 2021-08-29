@@ -97,7 +97,8 @@ Benchmark results were generated on a MBP 2018, 2,3 GHz Intel Core i5. To perfor
 ### Who uses omgopass
 
 - [LogChimp](https://github.com/logchimp/logchimp) — self-hosted platform for products makers to get feedback from their users
-- [Laravel VPN Admin](https://github.com/Laravel-VPN-Admin/api-core) — Admin panel for VPN servers management 
+- [Laravel VPN Admin](https://github.com/Laravel-VPN-Admin/api-core) — Admin panel for VPN servers management
+- [Password Pusher](https://github.com/pglombardo/PasswordPusher) - application to securely communicate passwords over the web
 
 ### Supporting IE11 and obsolete platforms
 
